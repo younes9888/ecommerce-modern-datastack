@@ -1,0 +1,41 @@
+[2026-07-06T18:40:28.549+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-07-06T18:40:28.588+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_pipeline.dbt_snapshot manual__2026-07-06T18:39:57.209626+00:00 [queued]>
+[2026-07-06T18:40:28.598+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_pipeline.dbt_snapshot manual__2026-07-06T18:39:57.209626+00:00 [queued]>
+[2026-07-06T18:40:28.599+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-07-06T18:40:28.615+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dbt_snapshot> on 2026-07-06 18:39:57.209626+00:00
+[2026-07-06T18:40:28.624+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dbt_pipeline', 'dbt_snapshot', 'manual__2026-07-06T18:39:57.209626+00:00', '--job-id', '56', '--raw', '--subdir', 'DAGS_FOLDER/scd_snapshots.py', '--cfg-path', '/tmp/tmpze2kjvqr']
+[2026-07-06T18:40:28.622+0000] {standard_task_runner.py:64} INFO - Started process 56545 to run task
+[2026-07-06T18:40:28.627+0000] {standard_task_runner.py:91} INFO - Job 56: Subtask dbt_snapshot
+[2026-07-06T18:40:28.689+0000] {task_command.py:426} INFO - Running <TaskInstance: dbt_pipeline.dbt_snapshot manual__2026-07-06T18:39:57.209626+00:00 [running]> on host 791512f83421
+[2026-07-06T18:40:28.822+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dbt_pipeline' AIRFLOW_CTX_TASK_ID='dbt_snapshot' AIRFLOW_CTX_EXECUTION_DATE='2026-07-06T18:39:57.209626+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-07-06T18:39:57.209626+00:00'
+[2026-07-06T18:40:28.823+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-07-06T18:40:29.177+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-07-06T18:40:29.179+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n        cd /opt/***/ecommerce_dbt\n        dbt snapshot --profiles-dir /home/***/.dbt\n        ']
+[2026-07-06T18:40:29.196+0000] {subprocess.py:86} INFO - Output:
+[2026-07-06T18:40:31.998+0000] {subprocess.py:93} INFO - [0m18:40:31  Running with dbt=1.11.11
+[2026-07-06T18:40:33.263+0000] {subprocess.py:93} INFO - [0m18:40:33  Registered adapter: snowflake=1.11.5
+[2026-07-06T18:40:33.739+0000] {subprocess.py:93} INFO - [0m18:40:33  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+[2026-07-06T18:40:33.740+0000] {subprocess.py:93} INFO - There are 1 unused configuration paths:
+[2026-07-06T18:40:33.741+0000] {subprocess.py:93} INFO - - models.ecommerce_dbt.example
+[2026-07-06T18:40:33.998+0000] {subprocess.py:93} INFO - [0m18:40:33  Found 13 models, 3 snapshots, 7 sources, 536 macros
+[2026-07-06T18:40:34.004+0000] {subprocess.py:93} INFO - [0m18:40:34
+[2026-07-06T18:40:34.006+0000] {subprocess.py:93} INFO - [0m18:40:34  Concurrency: 4 threads (target='dev')
+[2026-07-06T18:40:34.008+0000] {subprocess.py:93} INFO - [0m18:40:34
+[2026-07-06T18:40:36.080+0000] {subprocess.py:93} INFO - [0m18:40:36  1 of 3 START snapshot analytics.customers_snapshots ............................ [RUN]
+[2026-07-06T18:40:36.082+0000] {subprocess.py:93} INFO - [0m18:40:36  2 of 3 START snapshot analytics.employee_snapshots ............................. [RUN]
+[2026-07-06T18:40:36.084+0000] {subprocess.py:93} INFO - [0m18:40:36  3 of 3 START snapshot analytics.products_snapshots ............................. [RUN]
+[2026-07-06T18:40:42.310+0000] {subprocess.py:93} INFO - [0m18:40:42  1 of 3 OK snapshotted analytics.customers_snapshots ............................ [[32mSUCCESS 0[0m in 6.22s]
+[2026-07-06T18:40:43.260+0000] {subprocess.py:93} INFO - [0m18:40:43  3 of 3 OK snapshotted analytics.products_snapshots ............................. [[32mSUCCESS 0[0m in 7.17s]
+[2026-07-06T18:40:43.673+0000] {subprocess.py:93} INFO - [0m18:40:43  2 of 3 OK snapshotted analytics.employee_snapshots ............................. [[32mSUCCESS 0[0m in 7.58s]
+[2026-07-06T18:40:44.895+0000] {subprocess.py:93} INFO - [0m18:40:44
+[2026-07-06T18:40:44.903+0000] {subprocess.py:93} INFO - [0m18:40:44  Finished running 3 snapshots in 0 hours 0 minutes and 10.88 seconds (10.88s).
+[2026-07-06T18:40:45.113+0000] {subprocess.py:93} INFO - [0m18:40:45
+[2026-07-06T18:40:45.115+0000] {subprocess.py:93} INFO - [0m18:40:45  [32mCompleted successfully[0m
+[2026-07-06T18:40:45.117+0000] {subprocess.py:93} INFO - [0m18:40:45
+[2026-07-06T18:40:45.119+0000] {subprocess.py:93} INFO - [0m18:40:45  Done. PASS=3 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=3
+[2026-07-06T18:40:45.846+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-07-06T18:40:45.848+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-07-06T18:40:45.914+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=dbt_pipeline, task_id=dbt_snapshot, run_id=manual__2026-07-06T18:39:57.209626+00:00, execution_date=20260706T183957, start_date=20260706T184028, end_date=20260706T184045
+[2026-07-06T18:40:45.968+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-07-06T18:40:46.001+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-07-06T18:40:46.004+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

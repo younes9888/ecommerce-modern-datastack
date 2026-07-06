@@ -1,0 +1,13 @@
+ecommerce_dbt:
+  outputs:
+    dev:
+      account: dv11389.canada-central.azure
+      database: ecommerce
+      password: Ziat9888888888
+      role: accountadmin
+      schema: analytics
+      threads: 4
+      type: snowflake
+      user: younes8802
+      warehouse: COMPUTE_WH
+  target: dev

@@ -1,0 +1,61 @@
+[2026-07-06T18:38:04.751+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-07-06T18:38:04.851+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_pipeline.dbt_run scheduled__2026-07-05T00:00:00+00:00 [queued]>
+[2026-07-06T18:38:04.876+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_pipeline.dbt_run scheduled__2026-07-05T00:00:00+00:00 [queued]>
+[2026-07-06T18:38:04.877+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-07-06T18:38:04.913+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dbt_run> on 2026-07-05 00:00:00+00:00
+[2026-07-06T18:38:04.923+0000] {standard_task_runner.py:64} INFO - Started process 56424 to run task
+[2026-07-06T18:38:04.927+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dbt_pipeline', 'dbt_run', 'scheduled__2026-07-05T00:00:00+00:00', '--job-id', '52', '--raw', '--subdir', 'DAGS_FOLDER/scd_snapshots.py', '--cfg-path', '/tmp/tmp0vp82ppo']
+[2026-07-06T18:38:04.931+0000] {standard_task_runner.py:91} INFO - Job 52: Subtask dbt_run
+[2026-07-06T18:38:05.044+0000] {task_command.py:426} INFO - Running <TaskInstance: dbt_pipeline.dbt_run scheduled__2026-07-05T00:00:00+00:00 [running]> on host 791512f83421
+[2026-07-06T18:38:05.192+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dbt_pipeline' AIRFLOW_CTX_TASK_ID='dbt_run' AIRFLOW_CTX_EXECUTION_DATE='2026-07-05T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-07-05T00:00:00+00:00'
+[2026-07-06T18:38:05.193+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-07-06T18:38:05.231+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-07-06T18:38:05.240+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n        cd /opt/***/ecommerce_dbt\n        dbt run --profiles-dir /home/***/.dbt\n        ']
+[2026-07-06T18:38:05.266+0000] {subprocess.py:86} INFO - Output:
+[2026-07-06T18:38:08.982+0000] {subprocess.py:93} INFO - [0m18:38:08  Running with dbt=1.11.11
+[2026-07-06T18:38:10.299+0000] {subprocess.py:93} INFO - [0m18:38:10  Registered adapter: snowflake=1.11.5
+[2026-07-06T18:38:10.957+0000] {subprocess.py:93} INFO - [0m18:38:10  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+[2026-07-06T18:38:10.958+0000] {subprocess.py:93} INFO - There are 1 unused configuration paths:
+[2026-07-06T18:38:10.959+0000] {subprocess.py:93} INFO - - models.ecommerce_dbt.example
+[2026-07-06T18:38:11.552+0000] {subprocess.py:93} INFO - [0m18:38:11  Found 13 models, 3 snapshots, 7 sources, 536 macros
+[2026-07-06T18:38:11.563+0000] {subprocess.py:93} INFO - [0m18:38:11
+[2026-07-06T18:38:11.568+0000] {subprocess.py:93} INFO - [0m18:38:11  Concurrency: 4 threads (target='dev')
+[2026-07-06T18:38:11.571+0000] {subprocess.py:93} INFO - [0m18:38:11
+[2026-07-06T18:38:14.203+0000] {subprocess.py:93} INFO - [0m18:38:14  1 of 13 START sql view model analytics.stg_customers ........................... [RUN]
+[2026-07-06T18:38:14.205+0000] {subprocess.py:93} INFO - [0m18:38:14  2 of 13 START sql view model analytics.stg_employee ............................ [RUN]
+[2026-07-06T18:38:14.207+0000] {subprocess.py:93} INFO - [0m18:38:14  3 of 13 START sql view model analytics.stg_inventory ........................... [RUN]
+[2026-07-06T18:38:14.209+0000] {subprocess.py:93} INFO - [0m18:38:14  4 of 13 START sql view model analytics.stg_products ............................ [RUN]
+[2026-07-06T18:38:15.081+0000] {subprocess.py:93} INFO - [0m18:38:15  1 of 13 OK created sql view model analytics.stg_customers ...................... [[32mSUCCESS 1[0m in 0.87s]
+[2026-07-06T18:38:15.088+0000] {subprocess.py:93} INFO - [0m18:38:15  5 of 13 START sql view model analytics.stg_reviews ............................. [RUN]
+[2026-07-06T18:38:15.466+0000] {subprocess.py:93} INFO - [0m18:38:15  5 of 13 OK created sql view model analytics.stg_reviews ........................ [[32mSUCCESS 1[0m in 0.38s]
+[2026-07-06T18:38:15.484+0000] {subprocess.py:93} INFO - [0m18:38:15  6 of 13 START sql view model analytics.stg_sales ............................... [RUN]
+[2026-07-06T18:38:15.791+0000] {subprocess.py:93} INFO - [0m18:38:15  3 of 13 OK created sql view model analytics.stg_inventory ...................... [[32mSUCCESS 1[0m in 1.57s]
+[2026-07-06T18:38:15.802+0000] {subprocess.py:93} INFO - [0m18:38:15  4 of 13 OK created sql view model analytics.stg_products ....................... [[32mSUCCESS 1[0m in 1.58s]
+[2026-07-06T18:38:15.829+0000] {subprocess.py:93} INFO - [0m18:38:15  7 of 13 START sql view model analytics.stg_stores .............................. [RUN]
+[2026-07-06T18:38:15.840+0000] {subprocess.py:93} INFO - [0m18:38:15  6 of 13 OK created sql view model analytics.stg_sales .......................... [[32mSUCCESS 1[0m in 0.35s]
+[2026-07-06T18:38:15.844+0000] {subprocess.py:93} INFO - [0m18:38:15  8 of 13 START sql table model analytics.dim_customers .......................... [RUN]
+[2026-07-06T18:38:15.879+0000] {subprocess.py:93} INFO - [0m18:38:15  9 of 13 START sql incremental model analytics.fct_reviews ...................... [RUN]
+[2026-07-06T18:38:15.993+0000] {subprocess.py:93} INFO - [0m18:38:15  2 of 13 OK created sql view model analytics.stg_employee ....................... [[32mSUCCESS 1[0m in 1.78s]
+[2026-07-06T18:38:16.106+0000] {subprocess.py:93} INFO - [0m18:38:16  10 of 13 START sql table model analytics.dim_products .......................... [RUN]
+[2026-07-06T18:38:16.528+0000] {subprocess.py:93} INFO - [0m18:38:16  7 of 13 OK created sql view model analytics.stg_stores ......................... [[32mSUCCESS 1[0m in 0.68s]
+[2026-07-06T18:38:16.539+0000] {subprocess.py:93} INFO - [0m18:38:16  11 of 13 START sql table model analytics.dim_employee .......................... [RUN]
+[2026-07-06T18:38:17.310+0000] {subprocess.py:93} INFO - [0m18:38:17  8 of 13 OK created sql table model analytics.dim_customers ..................... [[32mSUCCESS 721[0m in 1.45s]
+[2026-07-06T18:38:17.321+0000] {subprocess.py:93} INFO - [0m18:38:17  11 of 13 OK created sql table model analytics.dim_employee ..................... [[32mSUCCESS 700[0m in 0.78s]
+[2026-07-06T18:38:17.329+0000] {subprocess.py:93} INFO - [0m18:38:17  12 of 13 START sql table model analytics.dim_stores ............................ [RUN]
+[2026-07-06T18:38:17.844+0000] {subprocess.py:93} INFO - [0m18:38:17  10 of 13 OK created sql table model analytics.dim_products ..................... [[32mSUCCESS 366[0m in 1.73s]
+[2026-07-06T18:38:18.148+0000] {subprocess.py:93} INFO - [0m18:38:18  12 of 13 OK created sql table model analytics.dim_stores ....................... [[32mSUCCESS 383[0m in 0.81s]
+[2026-07-06T18:38:18.155+0000] {subprocess.py:93} INFO - [0m18:38:18  13 of 13 START sql incremental model analytics.fct_sales ....................... [RUN]
+[2026-07-06T18:38:19.014+0000] {subprocess.py:93} INFO - [0m18:38:19  9 of 13 OK created sql incremental model analytics.fct_reviews ................. [[32mSUCCESS 0[0m in 3.12s]
+[2026-07-06T18:38:20.941+0000] {subprocess.py:93} INFO - [0m18:38:20  13 of 13 OK created sql incremental model analytics.fct_sales .................. [[32mSUCCESS 0[0m in 2.78s]
+[2026-07-06T18:38:22.450+0000] {subprocess.py:93} INFO - [0m18:38:22
+[2026-07-06T18:38:22.455+0000] {subprocess.py:93} INFO - [0m18:38:22  Finished running 2 incremental models, 4 table models, 7 view models in 0 hours 0 minutes and 10.88 seconds (10.88s).
+[2026-07-06T18:38:22.729+0000] {subprocess.py:93} INFO - [0m18:38:22
+[2026-07-06T18:38:22.732+0000] {subprocess.py:93} INFO - [0m18:38:22  [32mCompleted successfully[0m
+[2026-07-06T18:38:22.735+0000] {subprocess.py:93} INFO - [0m18:38:22
+[2026-07-06T18:38:22.738+0000] {subprocess.py:93} INFO - [0m18:38:22  Done. PASS=13 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=13
+[2026-07-06T18:38:23.473+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-07-06T18:38:23.474+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-07-06T18:38:23.726+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=dbt_pipeline, task_id=dbt_run, run_id=scheduled__2026-07-05T00:00:00+00:00, execution_date=20260705T000000, start_date=20260706T183804, end_date=20260706T183823
+[2026-07-06T18:38:23.786+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-07-06T18:38:23.832+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-07-06T18:38:23.836+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

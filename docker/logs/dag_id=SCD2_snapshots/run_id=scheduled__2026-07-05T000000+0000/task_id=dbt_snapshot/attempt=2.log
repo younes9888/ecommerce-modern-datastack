@@ -1,0 +1,71 @@
+[2026-07-06T18:32:54.411+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-07-06T18:32:54.474+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: SCD2_snapshots.dbt_snapshot scheduled__2026-07-05T00:00:00+00:00 [queued]>
+[2026-07-06T18:32:54.490+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: SCD2_snapshots.dbt_snapshot scheduled__2026-07-05T00:00:00+00:00 [queued]>
+[2026-07-06T18:32:54.493+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 2
+[2026-07-06T18:32:54.515+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dbt_snapshot> on 2026-07-05 00:00:00+00:00
+[2026-07-06T18:32:54.522+0000] {standard_task_runner.py:64} INFO - Started process 56335 to run task
+[2026-07-06T18:32:54.526+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'SCD2_snapshots', 'dbt_snapshot', 'scheduled__2026-07-05T00:00:00+00:00', '--job-id', '50', '--raw', '--subdir', 'DAGS_FOLDER/scd_snapshots.py', '--cfg-path', '/tmp/tmpn9_6otmc']
+[2026-07-06T18:32:54.529+0000] {standard_task_runner.py:91} INFO - Job 50: Subtask dbt_snapshot
+[2026-07-06T18:32:54.606+0000] {task_command.py:426} INFO - Running <TaskInstance: SCD2_snapshots.dbt_snapshot scheduled__2026-07-05T00:00:00+00:00 [running]> on host 791512f83421
+[2026-07-06T18:32:54.731+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='SCD2_snapshots' AIRFLOW_CTX_TASK_ID='dbt_snapshot' AIRFLOW_CTX_EXECUTION_DATE='2026-07-05T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-07-05T00:00:00+00:00'
+[2026-07-06T18:32:54.733+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-07-06T18:32:54.756+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-07-06T18:32:54.757+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/ecommerce_dbt && dbt snapshot --profiles-dir /home/***/.dbt']
+[2026-07-06T18:32:54.768+0000] {subprocess.py:86} INFO - Output:
+[2026-07-06T18:32:57.688+0000] {subprocess.py:93} INFO - [0m18:32:57  Running with dbt=1.11.11
+[2026-07-06T18:32:58.916+0000] {subprocess.py:93} INFO - [0m18:32:58  Registered adapter: snowflake=1.11.5
+[2026-07-06T18:32:59.426+0000] {subprocess.py:93} INFO - [0m18:32:59  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+[2026-07-06T18:32:59.429+0000] {subprocess.py:93} INFO - There are 1 unused configuration paths:
+[2026-07-06T18:32:59.429+0000] {subprocess.py:93} INFO - - models.ecommerce_dbt.example
+[2026-07-06T18:32:59.798+0000] {subprocess.py:93} INFO - [0m18:32:59  Found 13 models, 3 snapshots, 7 sources, 536 macros
+[2026-07-06T18:32:59.804+0000] {subprocess.py:93} INFO - [0m18:32:59
+[2026-07-06T18:32:59.806+0000] {subprocess.py:93} INFO - [0m18:32:59  Concurrency: 4 threads (target='dev')
+[2026-07-06T18:32:59.808+0000] {subprocess.py:93} INFO - [0m18:32:59
+[2026-07-06T18:33:01.476+0000] {subprocess.py:93} INFO - [0m18:33:01  1 of 3 START snapshot analytics.customers_snapshots ............................ [RUN]
+[2026-07-06T18:33:01.478+0000] {subprocess.py:93} INFO - [0m18:33:01  2 of 3 START snapshot analytics.employee_snapshots ............................. [RUN]
+[2026-07-06T18:33:01.482+0000] {subprocess.py:93} INFO - [0m18:33:01  3 of 3 START snapshot analytics.products_snapshots ............................. [RUN]
+[2026-07-06T18:33:02.073+0000] {subprocess.py:93} INFO - [0m18:33:02  1 of 3 ERROR snapshotting analytics.customers_snapshots ........................ [[31mERROR[0m in 0.58s]
+[2026-07-06T18:33:03.001+0000] {subprocess.py:93} INFO - [0m18:33:03  2 of 3 ERROR snapshotting analytics.employee_snapshots ......................... [[31mERROR[0m in 1.51s]
+[2026-07-06T18:33:03.006+0000] {subprocess.py:93} INFO - [0m18:33:03  3 of 3 ERROR snapshotting analytics.products_snapshots ......................... [[31mERROR[0m in 1.52s]
+[2026-07-06T18:33:04.284+0000] {subprocess.py:93} INFO - [0m18:33:04
+[2026-07-06T18:33:04.286+0000] {subprocess.py:93} INFO - [0m18:33:04  Finished running 3 snapshots in 0 hours 0 minutes and 4.47 seconds (4.47s).
+[2026-07-06T18:33:04.416+0000] {subprocess.py:93} INFO - [0m18:33:04
+[2026-07-06T18:33:04.421+0000] {subprocess.py:93} INFO - [0m18:33:04  [31mCompleted with 3 errors, 0 partial successes, and 0 warnings:[0m
+[2026-07-06T18:33:04.430+0000] {subprocess.py:93} INFO - [0m18:33:04
+[2026-07-06T18:33:04.437+0000] {subprocess.py:93} INFO - [0m18:33:04  [31mFailure in snapshot customers_snapshots (snapshots/customers_snapshots.sql)[0m
+[2026-07-06T18:33:04.443+0000] {subprocess.py:93} INFO - [0m18:33:04    Database Error in snapshot customers_snapshots (snapshots/customers_snapshots.sql)
+[2026-07-06T18:33:04.444+0000] {subprocess.py:93} INFO -   002003 (42S02): SQL compilation error:
+[2026-07-06T18:33:04.445+0000] {subprocess.py:93} INFO -   Object 'ECOMMERCE.ANALYTICS.STG_CUSTOMERS' does not exist or not authorized.
+[2026-07-06T18:33:04.447+0000] {subprocess.py:93} INFO - [0m18:33:04
+[2026-07-06T18:33:04.452+0000] {subprocess.py:93} INFO - [0m18:33:04  [31mFailure in snapshot employee_snapshots (snapshots/employee_snapshots.sql)[0m
+[2026-07-06T18:33:04.459+0000] {subprocess.py:93} INFO - [0m18:33:04    Database Error in snapshot employee_snapshots (snapshots/employee_snapshots.sql)
+[2026-07-06T18:33:04.460+0000] {subprocess.py:93} INFO -   002003 (42S02): SQL compilation error:
+[2026-07-06T18:33:04.462+0000] {subprocess.py:93} INFO -   Object 'ECOMMERCE.ANALYTICS.STG_EMPLOYEE' does not exist or not authorized.
+[2026-07-06T18:33:04.463+0000] {subprocess.py:93} INFO - [0m18:33:04
+[2026-07-06T18:33:04.465+0000] {subprocess.py:93} INFO - [0m18:33:04  [31mFailure in snapshot products_snapshots (snapshots/products_snapshots.sql)[0m
+[2026-07-06T18:33:04.469+0000] {subprocess.py:93} INFO - [0m18:33:04    Database Error in snapshot products_snapshots (snapshots/products_snapshots.sql)
+[2026-07-06T18:33:04.471+0000] {subprocess.py:93} INFO -   002003 (42S02): SQL compilation error:
+[2026-07-06T18:33:04.472+0000] {subprocess.py:93} INFO -   Object 'ECOMMERCE.ANALYTICS.STG_PRODUCTS' does not exist or not authorized.
+[2026-07-06T18:33:04.476+0000] {subprocess.py:93} INFO - [0m18:33:04
+[2026-07-06T18:33:04.481+0000] {subprocess.py:93} INFO - [0m18:33:04  Done. PASS=0 WARN=0 ERROR=3 SKIP=0 NO-OP=0 TOTAL=3
+[2026-07-06T18:33:05.386+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2026-07-06T18:33:05.388+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-07-06T18:33:05.648+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2026-07-06T18:33:05.656+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=SCD2_snapshots, task_id=dbt_snapshot, run_id=scheduled__2026-07-05T00:00:00+00:00, execution_date=20260705T000000, start_date=20260706T183254, end_date=20260706T183305
+[2026-07-06T18:33:05.678+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 50 for task dbt_snapshot (Bash command failed. The command returned a non-zero exit code 1.; 56335)
+[2026-07-06T18:33:05.733+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2026-07-06T18:33:05.782+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-07-06T18:33:05.788+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

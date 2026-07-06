@@ -1,0 +1,29 @@
+version: 2
+
+sources:
+  - name: raw
+    description: "This is the raw source data for the ecommerce project."
+    database: ECOMMERCE
+    schema: RAW
+
+    tables:
+      - name: customers
+        description: "This table contains customer information."
+
+      - name: employee
+        description: "This table contains employee information."
+
+      - name: inventory
+        description: "This table contains inventory information."
+
+      - name: products
+        description: "This table contains product information."
+
+      - name: reviews
+        description: "This table contains product reviews."
+
+      - name: sales
+        description: "This table contains sales transactions."
+
+      - name: stores
+        description: "This table contains store information."

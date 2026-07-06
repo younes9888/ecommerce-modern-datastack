@@ -1,0 +1,31 @@
+# GitHub
+/.github/.cache
+
+# Docker
+docker/logs/
+docker/minio/
+docker/postgres/
+
+# dbt
+ecommerce_dbt/.dbt/
+ecommerce_dbt/target/
+ecommerce_dbt/logs/
+
+# Environment
+.env
+
+# Python
+__pycache__/
+*.pyc
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+
+# Docker override
+docker-compose.override.yml
+
+logs/
