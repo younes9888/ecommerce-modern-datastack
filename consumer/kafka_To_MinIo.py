@@ -5,7 +5,6 @@ import pandas as pd
 from datetime import datetime
 import os
 from dotenv import load_dotenv
-import fastparquet
 
 
 # Load secrets from .env
